@@ -21,7 +21,7 @@ div {
       padding: 1em 2em;
       font-size: 1em;
       margin: 0.5em 0em;
-      border: 0.063em solid white;
+      border: none;
       border-radius: 0.63em;
       text-align: left;
       color: black;
