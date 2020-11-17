@@ -60,6 +60,7 @@ class CalculadoraBasica {
         if(this.resuelto == true)   //por si se quiere seguir haciendo operaciones con el resultado
             this.resuelto = false;
         this.pantalla += "*";
+        this.operacionesReales += "*";
         document.getElementById("pantalla").value = this.pantalla;
     }
     division(){
@@ -311,6 +312,29 @@ class CalculadoraCientifica extends CalculadoraBasica{
         this.pantalla += "ln(" + digit + ")";
         this.operacionesReales = this.operacionesReales.slice(0,-lengthLastNumber);
         this.operacionesReales += Math.log(digit).toString();
+        document.getElementById("pantalla").value = this.pantalla;
+    }
+    parentesisIzq(){
+        this.pantalla += "(";
+        this.operacionesReales += "(";
+        document.getElementById("pantalla").value = this.pantalla;
+    }
+    parentesisDer(){
+        this.pantalla += ")";
+        this.operacionesReales += ")";
+        document.getElementById("pantalla").value = this.pantalla;
+    }
+    diezElevadoA(){
+        var str = document.getElementById("pantalla").value;
+        var lengthLastNumber = this.getLengthOfLastNumber();
+        var digit = str.substr(str.length-lengthLastNumber,str.length);
+
+        this.pantalla = this.pantalla.slice(0,-lengthLastNumber);
+        this.operacionesReales = this.operacionesReales.slice(0,-lengthLastNumber);
+
+        this.pantalla += "10^(" + digit + ")";
+        this.operacionesReales += Math.pow(10,digit);
+        
         document.getElementById("pantalla").value = this.pantalla;
     }
 }
