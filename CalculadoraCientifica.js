@@ -112,7 +112,7 @@ class CalculadoraBasica {
         }
     }
     
-}   //SOLO TE COGE UN DIGITO EN LA MAYORIA DE OPERACIONES
+}
 class CalculadoraCientifica extends CalculadoraBasica{
     constructor(){
         super();
@@ -230,7 +230,7 @@ class CalculadoraCientifica extends CalculadoraBasica{
         this.operacionesReales += "Math.pow(" + digit + ",1/2)";
         document.getElementById("pantalla").value = this.pantalla;
     }
-    elevadoA(){ //solo se puede elevar a un numero de un digito
+    elevadoA(){
         var str = document.getElementById("pantalla").value;
         var lengthLastNumber = this.getLengthOfLastNumber();
         var digit = str.substr(str.length-lengthLastNumber,str.length);

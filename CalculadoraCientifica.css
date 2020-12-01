@@ -41,6 +41,3 @@ div {
       cursor: pointer;
       border-radius: 0.63em;
   }
-  input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
-    background-color: #333;
-  }
